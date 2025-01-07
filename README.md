@@ -1,5 +1,5 @@
-# CS-1180-FA24
-Class materials for CS-1180 in Fall 2024
+# CS-1180-SP25
+Class materials for CS-1180 in Spring 2025
 
 Below are instructions to help you get Java and your IDE installed, provided by Professor Kayleigh Duncan.
 
