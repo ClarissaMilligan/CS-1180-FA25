@@ -8,7 +8,7 @@ You will need to install a minimum of two things for this class: Java itself and
 1. Navigate to [oracle.com](https://www.oracle.com/java/technologies/downloads/#jdk23-windows) to download Java. Oracle is the company behind Java.
 2. The link will automatically take you to the Windows download page. If you use Linux or macOS, click the corresponding tabs.
 3. If you are using Windows, select either the .exe or .msi installer. All of the installers contain the same thing, it is just the method of install that differs.
-4. Once the file has downloaded, navigate to the downloaded file and double-click it to run the installe.
+4. Once the file has downloaded, navigate to the downloaded file and double-click it to run the installer.
 5. Follow all prompts.
 6. Java is installed!
 
@@ -27,3 +27,15 @@ Over the course of your education, it is a good idea to become familiar with bot
 | More resource intensive | More lightweight |
 | Git integration | Git integration |
 | Easier start-up | More customization |
+
+#### IntelliJ
+1. Navigate to [jetbrains.com](https://www.jetbrains.com/idea/download/?section=windows) to download IntelliJ.
+2. If you are not using Windows, click the corresponding tab for your Operating System. Scroll down to IntelliJ IDEA Community Edition. (IntelliJ IDEA Ultimate is paid software.)
+3. Click download. Note: make sure you are clicking download for the Community Edition.
+4. Once the file has downloaded, navigate to the downloaded file and double-click it to run the installer.
+5. Follow all prompts.
+   * On the "Installation Options" menu, make sure to select ".java" under "Create Associations".
+   * Additionally, select "Add "bin" folder to the PATH" under "Update PATH Variables".
+   * You can also select "Add "Open Folder as Project"" under "Update Context Menu".
+6. Allow IntelliJ to restart your computer.
+7. IntelliJ is installed!
