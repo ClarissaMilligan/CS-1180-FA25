@@ -21,5 +21,7 @@ public class Favorites
         System.out.println("What's your favorite number?");
         double favNum = banana.nextDouble();
         System.out.println("Your favorite number is " + favNum);
+
+        Scanner scnr = new Scanner(System.in);
     }
 }
