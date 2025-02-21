@@ -9,7 +9,7 @@ public class NestedShapes
         {
             for (int j = 1; j <= maxWidth; j++)
             {
-                if (i == j || i == 1 || j == maxWidth || (j == maxWidth - (i - 1)))
+                if (i == j || i == 1 || j == maxWidth || (j + i - 1 == maxWidth ))
                 {
                     System.out.print("# ");
                 }
