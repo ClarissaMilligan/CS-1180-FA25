@@ -43,6 +43,4 @@ For these questions, you will be expected to:
 * understand how a method is called
 * understand how to pass things into a method
 * understand how to return data from a method
-
-FOR HONORS STUDENTS:
 * understand how to write a simple method
