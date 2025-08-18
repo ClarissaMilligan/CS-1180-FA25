@@ -1,5 +1,5 @@
-# CS-1180-SP25
-Class materials for CS-1180 in Spring 2025
+# CS-1180-FA25
+Class materials for CS-1180 in Fall 2025
 
 ## Install Instructions
 You will need to install a minimum of two things for this class: Java itself and an IDE to work in. IDE stands for Integrated Developement Environment. It is the program that you will use to write your code.
