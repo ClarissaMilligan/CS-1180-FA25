@@ -18,5 +18,18 @@ public class HelloClass // this is my class
         // but often times we prefer to do them at the same time
         int bobsAge = 55;
         System.out.println(bobsAge);
+
+        double myFavDecimalValue = 8.8;
+
+        boolean isInstructor = true;
+        isInstructor = false;
+
+        char firstLetterOfName = 'c';
+
+        String alphabet = "AbfsnjkAeDHKFHkevbh";
+
+        alphabet = alphabet.toLowerCase();
+
+        System.out.println(alphabet);
     }
 }
