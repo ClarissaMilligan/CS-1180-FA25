@@ -44,5 +44,8 @@ public class HelloHonors
 
         long reallyBigNum = 437543873;
         System.out.printf("%0,20d", reallyBigNum);
+
+        System.out.println("\n\t\"Hi everyone!\" said " + pigName + ".");
+        System.out.println("My 'favorite' class is CS-1180\\Java Programming");
     }
 }
