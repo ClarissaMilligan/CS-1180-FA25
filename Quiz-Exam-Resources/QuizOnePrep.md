@@ -33,7 +33,7 @@ The first quiz will be held on Monday, September 15. The quiz is 30  minutes. Th
 * Integer division
 
 
-## Conditionals - 3 points
+## Conditionals - 5 points
 
 * Be capable of reading code utilizing conditional statements
 * Understand the if/else if/else structure
