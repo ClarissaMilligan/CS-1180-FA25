@@ -19,6 +19,10 @@ public class LoopIntro
             input = scnr.next().charAt(0);
         }
 
+        System.out.println("Welcome!");
+        System.out.println("Continue to type 'a' to continue looping");
+        input = scnr.next().charAt(0);
+
         // this is equivalent to the while loop above
         // i can omit the initialization or update steps if i want to
         // but then i might as well use a for loop
@@ -44,6 +48,15 @@ public class LoopIntro
         {
             System.out.println(letter);
             letter++;
+        }
+
+        int counter = 0;
+        letter = 'a';
+        while (counter < numLetters)
+        {
+            System.out.println(letter);
+            letter++;
+            counter = counter + 1;
         }
     }
 }
