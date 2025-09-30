@@ -2,7 +2,7 @@ public class MethodPractice
 {
     public static void main(String[] args)
     {
-        double g1 = 23.8;
+        int g1 = 23;
         double g2 = 55.9;
         double g3 = 100.0;
         double result = avg(g1, g2, g3);
