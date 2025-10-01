@@ -1,11 +1,20 @@
+import java.util.Random;
+
 public class MethodPractice
 {
     public static void main(String[] args)
     {
+        Random rng = new Random();
+
+        for(int i = 0; i < 10; i++)
+        {
+            System.out.println(rng.nextInt(1, 5));
+        }
+
         int g1 = 23;
         double g2 = 55.9;
         double g3 = 100.0;
-        double result = avg(g1, g2, g3);
+        double result = MethodPractice.avg(g1, g2, g3);
         System.out.println(result);
 
         long longG1 = 321973289;
