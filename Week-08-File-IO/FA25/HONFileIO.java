@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class HONFileIO
 {
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args)
     {
         Scanner scnr = new Scanner(System.in);
         System.out.println("What is your name?");
@@ -44,21 +44,50 @@ public class HONFileIO
                 scnr.nextLine();
             }
         }
-        String log = name + "\n" + age + "\n" + toes;
-        logData(log);
 
-        System.out.println("What is the number of the log you want to read?");
-        int fileNum = scnr.nextInt();
-        String fileName = "log-" + fileNum + ".txt";
-        File fileHandle = new File(fileName);
-        Scanner fileScnr = new Scanner(fileHandle);
-        int i = 0;
-        while (fileScnr.hasNextLine())
+        int fileNum = 0;
+        invalidInput = true;
+        try
         {
-            System.out.println("line #" + i + ": " + fileScnr.nextLine());
-            i++;
+            String log = name + "\n" + age + "\n" + toes;
+            logData(log);
+        }
+        catch (IOException ioe)
+        {
+            System.out.println("something bad happened.");
         }
 
+        while(invalidInput)
+        {
+            try
+            {
+                System.out.println("What is the number of the log you want to read?");
+                fileNum = scnr.nextInt();
+                String fileName = "log-" + fileNum + ".txt";
+                readFile(fileName);
+                invalidInput = false;
+            }
+            catch (InputMismatchException ime)
+            {
+                System.out.println("You must enter an integer!!!");
+                scnr.nextLine();
+            }
+            catch (IOException ioe)
+            {
+                if (fileNum < 0)
+                {
+                    System.out.println("File number cannot be negative.");
+                }
+                else if (fileNum > 9)
+                {
+                    System.out.println("File number cannot be greater than 9.");
+                }
+                else
+                {
+                    System.out.println("Invalid file number");
+                }
+            }
+        }
     }
 
     public static void logData(String data) throws IOException
@@ -71,5 +100,17 @@ public class HONFileIO
         pw.println(data);
         pw.close();
         fw.close();
+    }
+
+    public static void readFile(String fileName) throws FileNotFoundException
+    {
+        File fileHandle = new File(fileName);
+        Scanner fileScnr = new Scanner(fileHandle);
+        int i = 0;
+        while (fileScnr.hasNextLine())
+        {
+            System.out.println("line #" + i + ": " + fileScnr.nextLine());
+            i++;
+        }
     }
 }
