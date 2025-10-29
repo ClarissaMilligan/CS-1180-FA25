@@ -42,5 +42,10 @@ public class ArrayPractice
         System.out.println("eng: " + Arrays.toString(engineeringUIDS));
 
         System.out.println(compSciUIDs[1].indexOf("0"));
+
+        for (String uid : compSciUIDs)
+        {
+            System.out.println(uid);
+        }
     }
 }
