@@ -10,5 +10,6 @@ public class Driver
         System.out.println(cakeOne);
         System.out.println(cakeTwo);
         System.out.println(cakeTwo.getCakeVolume());
+        System.out.println(cakeOne.diameter);
     }
 }

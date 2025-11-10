@@ -1,6 +1,6 @@
 public class Cake
 {
-    private double diameter = 0.0;
+    public double diameter = 0.0;
     private int numLayers = 0;
     private String flavor = "";
     private boolean containsAllergens = false;
@@ -18,7 +18,7 @@ public class Cake
 //        this.numLayers = numLayers;
 //        this.flavor = flavor;
         this.containsAllergens = containsAllergens;
-        setDiameter(diameter);
+        this.setDiameter(diameter);
         setNumLayers(numLayers);
         setFlavor(flavor);
     }
@@ -37,7 +37,7 @@ public class Cake
         }
         else
         {
-            this.diameter = newDiameter;
+            diameter = newDiameter;
         }
     }
 
