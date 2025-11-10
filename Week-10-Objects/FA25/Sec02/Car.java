@@ -8,6 +8,7 @@ public class Car
     private int topSpeed = 0;
     private double safetyRating = 0.0;
     private double mpg = 0.0;
+    private double maxRange = 0.0;
     private Random rng = new Random();
     private final ArrayList<String> possibleColors = new ArrayList<>(Arrays.asList("red", "orange", "yellow", "green", "blue", "purple", "silver", "black", "white", "brown"));
 
@@ -19,9 +20,10 @@ public class Car
         topSpeed = rng.nextInt(60, 200);
         safetyRating = Math.round(rng.nextDouble(0, 100) * 100) / 100.0;
         mpg = Math.round(rng.nextDouble(10.0, 40.0) * 100) / 100.0;
+        maxRange = Math.round(rng.nextDouble(0.0, 1000.0) * 100) / 100.0;
     }
 
-    public Car(String color, int topSpeed, double safetyRating, double mpg)
+    public Car(String color, int topSpeed, double safetyRating, double mpg, double range)
     {
         // bypasses encapsulation
 //        this.color = color;
@@ -32,6 +34,12 @@ public class Car
         setTopSpeed(topSpeed);
         setSafetyRating(safetyRating);
         setMpg(mpg);
+        setMaxRange(range);
+    }
+
+    public double getTankSize()
+    {
+        return maxRange / mpg;
     }
 
     public void setTopSpeed(int newTopSpeed)
@@ -91,6 +99,23 @@ public class Car
         if (mpg >= 0)
         {
             this.mpg = mpg;
+        }
+    }
+
+    public double getMaxRange()
+    {
+        return maxRange;
+    }
+
+    public void setMaxRange(double maxRange)
+    {
+        if (maxRange < 0)
+        {
+            this.maxRange = 0;
+        }
+        else
+        {
+            this.maxRange = maxRange;
         }
     }
 }

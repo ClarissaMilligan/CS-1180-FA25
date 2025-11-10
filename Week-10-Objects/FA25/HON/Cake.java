@@ -4,6 +4,7 @@ public class Cake
     private int numLayers = 0;
     private String flavor = "";
     private boolean containsAllergens = false;
+    private final static double PI = 3.1415926;
 
     public Cake()
     {
@@ -12,10 +13,20 @@ public class Cake
 
     public Cake(double diameter, int numLayers, String flavor, boolean containsAllergens)
     {
-        this.diameter = diameter;
-        this.numLayers = numLayers;
-        this.flavor = flavor;
+        // these bypass our setters and encapsulation
+//        this.diameter = diameter;
+//        this.numLayers = numLayers;
+//        this.flavor = flavor;
         this.containsAllergens = containsAllergens;
+        setDiameter(diameter);
+        setNumLayers(numLayers);
+        setFlavor(flavor);
+    }
+
+    public double getCakeVolume()
+    {
+        double radius = diameter / 2;
+        return PI * Math.pow(radius, 2) * numLayers;
     }
 
     public void setDiameter(double newDiameter)
