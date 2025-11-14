@@ -2,13 +2,16 @@ public class CarMain
 {
     public static void main(String[] args)
     {
-        Car c1 = new Car();
-        Car customCar = new Car("blue", 69, 55.3, 25.0, 389.6);
+        Vehicle v1 = new Vehicle();
+        Vehicle customVehicle = new Vehicle("blue", 69, 55.3, 25.0, 389.6);
         // can't do this unless mpg is public
-        // c1.mpg = 5.5;
+        // v1.mpg = 5.5;
 
-        System.out.println(c1);
-        System.out.println(customCar);
-        System.out.println(customCar.getTankSize());
+        System.out.println(v1);
+        System.out.println(customVehicle);
+        System.out.println(customVehicle.getTankSize());
+
+        SemiTruck semiOne = new SemiTruck();
+        System.out.println(semiOne.getColor());
     }
 }
