@@ -37,6 +37,15 @@ public class Vehicle
         setMaxRange(range);
     }
 
+    public String toString()
+    {
+        return color + " vehicle:" +
+                "\ntop speed: " + topSpeed +
+                "\nsafety rating: " + safetyRating +
+                "\nmpg: " + mpg +
+                "\nmax range: " + maxRange;
+    }
+
     public double getTankSize()
     {
         return maxRange / mpg;
