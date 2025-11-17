@@ -1,49 +1,33 @@
-public class Cake
+public class Cake extends CircularDessert
 {
-    public double diameter = 0.0;
     private int numLayers = 0;
-    private String flavor = "";
-    private boolean containsAllergens = false;
-    private final static double PI = 3.1415926;
 
     public Cake()
     {
-
+        super();
+        numLayers = getRng().nextInt(0, 5);
     }
 
-    public Cake(double diameter, int numLayers, String flavor, boolean containsAllergens)
+    public Cake(double diameter, double heightPerLayer, int numLayers, String flavor, boolean containsAllergens)
     {
-        // these bypass our setters and encapsulation
-//        this.diameter = diameter;
-//        this.numLayers = numLayers;
-//        this.flavor = flavor;
-        this.containsAllergens = containsAllergens;
-        this.setDiameter(diameter);
-        setNumLayers(numLayers);
+        super(containsAllergens);
+        setDiameter(diameter);
+        setHeight(heightPerLayer);
         setFlavor(flavor);
+        setNumLayers(numLayers);
     }
 
-    public double getCakeVolume()
+    @Override
+    public double getVolume()
     {
-        double radius = diameter / 2;
-        return PI * Math.pow(radius, 2) * numLayers;
+        double radius = getDiameter() / 2;
+        return PI * Math.pow(radius, 2) * (numLayers * getHeight());
     }
 
-    public void setDiameter(double newDiameter)
+    @Override
+    public String toString()
     {
-        if (newDiameter < 0)
-        {
-            diameter = 0;
-        }
-        else
-        {
-            diameter = newDiameter;
-        }
-    }
-
-    public double getDiameter()
-    {
-        return diameter;
+        return super.toString() + " and " + numLayers + " layers";
     }
 
     public int getNumLayers()
@@ -57,25 +41,5 @@ public class Cake
         {
             this.numLayers = numLayers;
         }
-    }
-
-    public String getFlavor()
-    {
-        return flavor;
-    }
-
-    public boolean setFlavor(String flavor)
-    {
-        if (!flavor.isEmpty())
-        {
-            this.flavor = flavor;
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isContainsAllergens()
-    {
-        return containsAllergens;
     }
 }
