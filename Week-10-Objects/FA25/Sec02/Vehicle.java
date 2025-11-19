@@ -23,7 +23,7 @@ public class Vehicle
         maxRange = Math.round(rng.nextDouble(0.0, 1000.0) * 100) / 100.0;
     }
 
-    public Vehicle(String color, int topSpeed, double safetyRating, double mpg, double range)
+    public Vehicle(String color, int topSpeed, double safetyRating, double mpg, double range) throws NegativeValueException
     {
         // bypasses encapsulation
 //        this.color = color;
@@ -116,11 +116,16 @@ public class Vehicle
         return maxRange;
     }
 
-    public void setMaxRange(double maxRange)
+    /**
+     *
+     * @param maxRange
+     * @throws NegativeValueException
+     */
+    public void setMaxRange(double maxRange) throws NegativeValueException
     {
         if (maxRange < 0)
         {
-            this.maxRange = 0;
+            throw new NegativeValueException();
         }
         else
         {

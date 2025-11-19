@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class CarMain
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws NegativeValueException
     {
         Vehicle v1 = new Vehicle();
         Vehicle customVehicle = new Vehicle("blue", 69, 55.3, 25.0, 389.6);
@@ -17,7 +17,7 @@ public class CarMain
         System.out.println(semiOne);
         System.out.println(semiOne.getColor());
 
-        Car carOne = new Car();
+        Vehicle carOne = new Car();
         System.out.println(carOne);
 
         EV ev = new EV();
@@ -34,11 +34,21 @@ public class CarMain
         for (Vehicle v : highway)
         {
             System.out.println(v.getTankSize());
+            // System.out.println(((SemiTruck) v).getHaulingCapacity());
         }
 
         System.out.println(vehicleScoreCalculator(carOne));
         System.out.println(vehicleScoreCalculator(ev));
         System.out.println(vehicleScoreCalculator(semiOne));
+
+        try
+        {
+            v1.setMaxRange(-500);
+        }
+        catch (NegativeValueException e)
+        {
+            System.out.println("oops!");;
+        }
     }
 
     // example #2 of polymorphism
@@ -47,6 +57,10 @@ public class CarMain
         // can't call because it only exists in the semi class
         // v.getHaulingCapacity();
         // can call all of these because they exist in the vehicle class
+        if (v instanceof SemiTruck)
+        {
+            return (v.getMaxRange() + v.getSafetyRating() - v.getMpg()) * v.getTankSize() * ((SemiTruck) v).getHaulingCapacity();
+        }
         return (v.getMaxRange() + v.getSafetyRating() - v.getMpg()) * v.getTankSize();
     }
 }
